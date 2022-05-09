@@ -1,5 +1,5 @@
 package be.helha.dao;
 
-public interface CompteEnBanqueDao {
+public interface CompteEnBanqueDao extends Dao {
 
 }
