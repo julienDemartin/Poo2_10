@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="be.helha.UnTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-03T10:39:14" hostname="LEGRANDO" time="0.013">
-  <properties/>
-  <testcase name="unTest()" classname="be.helha.UnTest" time="0.013"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
