@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="be.helha.tests.Test_Parser" tests="5" skipped="0" failures="2" errors="0" timestamp="2022-05-12T08:15:11" hostname="LAPTOP-1M6GP7E2" time="0.472">
+<testsuite name="be.helha.tests.Test_Parser" tests="5" skipped="0" failures="2" errors="0" timestamp="2022-05-13T09:28:16" hostname="LAPTOP-1M6GP7E2" time="0.62">
   <properties/>
-  <testcase name="testPostgres1()" classname="be.helha.tests.Test_Parser" time="0.389">
+  <testcase name="testPostgres1()" classname="be.helha.tests.Test_Parser" time="0.496">
     <failure message="org.opentest4j.AssertionFailedError" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError
 	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:39)
 	at app//org.junit.jupiter.api.Assertions.fail(Assertions.java:117)
@@ -91,7 +91,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testPostgres2()" classname="be.helha.tests.Test_Parser" time="0.023">
+  <testcase name="testPostgres2()" classname="be.helha.tests.Test_Parser" time="0.025">
     <failure message="org.opentest4j.AssertionFailedError" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError
 	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:39)
 	at app//org.junit.jupiter.api.Assertions.fail(Assertions.java:117)
@@ -181,9 +181,9 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testPostgres3()" classname="be.helha.tests.Test_Parser" time="0.036"/>
-  <testcase name="testPostgres4()" classname="be.helha.tests.Test_Parser" time="0.007"/>
-  <testcase name="testPostgres5()" classname="be.helha.tests.Test_Parser" time="0.012"/>
+  <testcase name="testPostgres3()" classname="be.helha.tests.Test_Parser" time="0.034"/>
+  <testcase name="testPostgres4()" classname="be.helha.tests.Test_Parser" time="0.011"/>
+  <testcase name="testPostgres5()" classname="be.helha.tests.Test_Parser" time="0.02"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[java.lang.ClassNotFoundException: be.iesca.daoimpl.BiereDaoImpl
 	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)

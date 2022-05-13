@@ -4,6 +4,6 @@
 	    <dao>be.helha.daoimpl.UserDaoImpl</dao>
 	    <dao>be.helha.daoimpl.CompteEnBanqueDaoImpl</dao>
 	    <url>jdbc:postgresql://localhost:5432/database1</url>
-	    <user>database1</user>
+	    <user>postgres</user>
 	    <password>1234</password>
 </persistance>
