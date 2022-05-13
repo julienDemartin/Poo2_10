@@ -27,7 +27,7 @@ public class Test_Parser {
 			String toStringDao = persistance.getDaoImpl(CompteEnBanqueDao.class)
 					.toString();
 			assertTrue(toStringDao.contains("be.helha.daoimpl.CompteEnBanqueDaoImpl"));
-			assertEquals("jdbc:postgresql://localhost:5432/database1",
+			assertEquals("jdbc:postgresql://localhost:5432/postgres",
 					persistance.getUrl());
 			assertEquals("postgres", persistance.getUser());
 			assertEquals("1234", persistance.getPassword());
@@ -51,7 +51,7 @@ public class Test_Parser {
 			assertTrue(toStringDao.contains("be.helha.daoimpl.UserDaoImpl"));
 			toStringDao = persistance.getDaoImpl(CompteEnBanqueDao.class).toString();
 			assertTrue(toStringDao.contains("be.helha.daoimpl.CompteEnBanqueDaoImpl"));
-			assertEquals("jdbc:postgresql://localhost:5432/database1",
+			assertEquals("jdbc:postgresql://localhost:5432/postgres",
 					persistance.getUrl());
 			assertEquals("postgres", persistance.getUser());
 			assertEquals("1234", persistance.getPassword());
