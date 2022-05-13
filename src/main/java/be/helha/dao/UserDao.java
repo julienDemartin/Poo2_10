@@ -3,5 +3,5 @@ package be.helha.dao;
 import be.helha.domaine.User;
 
 public interface UserDao extends Dao {
-	
+	User getUser(String email, String password);
 }
