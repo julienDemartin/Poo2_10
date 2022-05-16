@@ -11,7 +11,7 @@ import be.helha.domaine.Bundle;
 
 	public class Bundle {
 		public static final String MESSAGE = "message";
-		public static final String BIERE = "biere";
+		
 		public static final String USER = "user";
 		public static final String OPERATION_REUSSIE = "operationReussie";
 		public static final String LISTE = "liste";
@@ -20,7 +20,8 @@ import be.helha.domaine.Bundle;
 		private Map<String, Object> map = new HashMap<String, Object>();
 	
 	
-		public Bundle() {
+		public Bundle()
+		{
 			this.map.put(Bundle.OPERATION_REUSSIE, true);
 			this.map.put(Bundle.MESSAGE, "");
 		}

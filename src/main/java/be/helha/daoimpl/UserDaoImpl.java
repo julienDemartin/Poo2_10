@@ -9,7 +9,7 @@ import be.helha.dao.UserDao;
 import be.helha.domaine.User;
 
 public class UserDaoImpl implements UserDao {
-	private static final String GET = "SELECT * FROM users WHERE email=? and password = crypt(?, password)";
+	private static final String GET = "SELECT * FROM account WHERE email=? and mdp = crypt(?, mdp)";
 
 	public UserDaoImpl() {
 	}

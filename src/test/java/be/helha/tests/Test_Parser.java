@@ -24,7 +24,7 @@ public class Test_Parser {
 			persistance = ParserConfig
 					.lireConfiguration("src/test/resources/configPostgres1.xml");
 			assertEquals("DB", persistance.getType());
-			String toStringDao = persistance.getDaoImpl(CompteEnBanqueDao.class)
+			String toStringDao = persistance.getDaoImpl(UserDao.class)
 					.toString();
 			assertTrue(toStringDao.contains("be.helha.daoimpl.CompteEnBanqueDaoImpl"));
 			assertEquals("jdbc:postgresql://localhost:5432/postgres",
@@ -49,7 +49,7 @@ public class Test_Parser {
 			String toStringDao = persistance.getDaoImpl(UserDao.class)
 					.toString();
 			assertTrue(toStringDao.contains("be.helha.daoimpl.UserDaoImpl"));
-			toStringDao = persistance.getDaoImpl(CompteEnBanqueDao.class).toString();
+			toStringDao = persistance.getDaoImpl(UserDao.class).toString();
 			assertTrue(toStringDao.contains("be.helha.daoimpl.CompteEnBanqueDaoImpl"));
 			assertEquals("jdbc:postgresql://localhost:5432/postgres",
 					persistance.getUrl());
