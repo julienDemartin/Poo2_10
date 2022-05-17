@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="be.helha.tests.Test_UserDao" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-05-17T08:15:42" hostname="LAPTOP-1M6GP7E2" time="1.892">
+  <properties/>
+  <testcase name="test1()" classname="be.helha.tests.Test_UserDao" time="1.246"/>
+  <testcase name="test2()" classname="be.helha.tests.Test_UserDao" time="0.201"/>
+  <testcase name="test3()" classname="be.helha.tests.Test_UserDao" time="0.277"/>
+  <testcase name="test4()" classname="be.helha.tests.Test_UserDao" time="0.162"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

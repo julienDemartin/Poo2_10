@@ -65,7 +65,7 @@ public class ControleurPrincipal implements Initializable {
 				root = FXMLLoader.load(getClass().getResource("/be/helha/vues/VueLogin.fxml"));
 				Stage stage = new Stage();
 				stage.setTitle("Connexion");
-				//stage.getIcons().add(new Image("/be/helha/application/banque.jpg"));
+				stage.getIcons().add(new Image("/be/helha/application/banque.jpg"));
 				stage.initModality(Modality.APPLICATION_MODAL);
 				stage.setScene(new Scene(root));
 				stage.setResizable(false);

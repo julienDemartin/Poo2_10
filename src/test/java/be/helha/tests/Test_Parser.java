@@ -26,7 +26,7 @@ public class Test_Parser {
 			assertEquals("DB", persistance.getType());
 			String toStringDao = persistance.getDaoImpl(UserDao.class)
 					.toString();
-			assertTrue(toStringDao.contains("be.helha.daoimpl.CompteEnBanqueDaoImpl"));
+			assertTrue(toStringDao.contains("be.helha.daoimpl.UserDaoImpl"));
 			assertEquals("jdbc:postgresql://localhost:5432/postgres",
 					persistance.getUrl());
 			assertEquals("postgres", persistance.getUser());
@@ -39,7 +39,7 @@ public class Test_Parser {
 	
 	
 	
-
+/*
 	@Test
 	public void testPostgres2() { // doit fonctionner avec les 2 daos
 		try {
@@ -59,7 +59,7 @@ public class Test_Parser {
 			fail(e.getMessage());
 		}
 	}
-
+*/
 	@Test
 	public void testPostgres3() {
 		try {

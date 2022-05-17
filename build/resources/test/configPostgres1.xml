@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- config OK -->
 <persistance type="DB">
-	    <dao>be.helha.daoimpl.CompteEnBanqueDaoImpl</dao>
+	    <dao>be.helha.daoimpl.UserDaoImpl</dao>
 	    <url>jdbc:postgresql://localhost:5432/postgres</url>
 	    <user>postgres</user>
 	    <password>1234</password>
