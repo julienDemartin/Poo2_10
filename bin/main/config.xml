@@ -2,6 +2,7 @@
 <!-- config OK - 2 daos sont renseignés-->
 <persistance type="DB">
 	    <dao>be.helha.daoimpl.UserDaoImpl</dao>
+	    <dao>be.helha.daoImpl.HistoryDaoImpl</dao>
 	    <url>jdbc:postgresql://localhost:5432/postgres</url>
 	    <user>postgres</user>
 	    <password>1234</password>
