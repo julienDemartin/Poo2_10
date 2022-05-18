@@ -1,27 +1,27 @@
 package be.helha.domaine;
 
 public class History {
-	private String cpteBeneficiare;
+	private String cpteReceveur;
 	private Double montant;
 	
-	public History(String cpteBeneficiare, Double montant) {
+	public History(String cpteReceveur, Double montant) {
 		super();
-		this.cpteBeneficiare = cpteBeneficiare;
+		this.cpteReceveur = cpteReceveur;
 		this.montant = montant;
 	}
 	
 	public History(History history) {
 		super();
-		this.cpteBeneficiare = history.cpteBeneficiare;
+		this.cpteReceveur = history.cpteReceveur;
 		this.montant = history.montant;
 	}
 
-	public String getCpteBeneficiare() {
-		return cpteBeneficiare;
+	public String getCpteReceveur() {
+		return cpteReceveur;
 	}
 
-	public void setCpteBeneficiare(String cpteBeneficiare) {
-		this.cpteBeneficiare = cpteBeneficiare;
+	public void setCpteReceveur(String cpteReceveur) {
+		this.cpteReceveur = cpteReceveur;
 	}
 
 	public Double getMontant() {
@@ -34,6 +34,6 @@ public class History {
 
 	@Override
 	public String toString() {
-		return "History [cpteBeneficiare=" + cpteBeneficiare + ", montant=" + montant + "]";
+		return "History [cpteReceveur=" + cpteReceveur + ", montant=" + montant + "]";
 	}	
 }
