@@ -13,6 +13,7 @@ import be.helha.domaine.Bundle;
 		public static final String MESSAGE = "message";
 		
 		public static final String USER = "user";
+		public static final String HISTORY = "history";
 		public static final String OPERATION_REUSSIE = "operationReussie";
 		public static final String LISTE = "liste";
 		public static final String NOM = "nom";
