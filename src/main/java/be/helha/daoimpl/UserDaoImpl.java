@@ -29,9 +29,13 @@ public class UserDaoImpl implements UserDao {
 			rs = ps.executeQuery();
 			if (rs.next()) {
 				user = new User();
-			
-				user.setNom(rs.getString("nom"));
 				user.setEmail(rs.getString("email"));
+				user.setNom(rs.getString("nom"));
+				user.setPassword(rs.getString("mdp"));
+				user.setNumero(rs.getString("numero"));
+				user.setSolde(rs.getDouble("solde"));
+				user.setDecouvert(rs.getDouble("decouvert"));
+				
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();

@@ -32,6 +32,7 @@ public class ControleurLogin implements Initializable {
 		User user = new User();
 		user.setEmail(tfEmail.getText());
 		user.setPassword(tfPassword.getText());
+		
 		bundle.put(Bundle.USER,(User) user);
 		
 		if((boolean)bundle.get(Bundle.OPERATION_REUSSIE)== true)

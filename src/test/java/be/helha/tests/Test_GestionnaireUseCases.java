@@ -49,13 +49,13 @@ public class Test_GestionnaireUseCases {
 			gestionBieres.supprimerBiere(bundle);
 		}
 	}*/
-/*
+
 	@Test
 	@Order(1)
 	public void testDeconnexion() {
 		gestionnaire.deconnecterUser(bundle);
 		assertFalse((Boolean) bundle.get(Bundle.OPERATION_REUSSIE));
-	}*/
+	}
 /*
 	@Test
 	@Order(2)
@@ -85,7 +85,7 @@ public class Test_GestionnaireUseCases {
 		assertFalse((Boolean) bundle.get(Bundle.OPERATION_REUSSIE));
 	}
 */
-	/*
+	
 	@Test
 	@Order(6)
 	public void testConnexion() {
@@ -106,7 +106,7 @@ public class Test_GestionnaireUseCases {
 	public void testReconnexion() {
 		gestionnaire.connecterUser(bundle);
 		assertFalse((Boolean) bundle.get(Bundle.OPERATION_REUSSIE));
-	}*/
+	}
 /*
 	@Test
 	@Order(8)

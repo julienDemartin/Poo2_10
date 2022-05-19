@@ -41,7 +41,11 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
+<<<<<<< HEAD
 <div class="counter">0.449s</div>
+=======
+<div class="counter">0.636s</div>
+>>>>>>> 540d0d3 ( ajout test connection reussi)
 <p>duration</p>
 </div>
 </td>
@@ -68,6 +72,9 @@
 </li>
 <li>
 <a href="#tab2">Standard error</a>
+</li>
+<li>
+<a href="#tab1">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
@@ -280,6 +287,7 @@
 </tr>
 </thead>
 <tr>
+<<<<<<< HEAD
 <td class="failures">test1()</td>
 <td class="failures">0.271s</td>
 <td class="failures">failed</td>
@@ -297,10 +305,30 @@
 <tr>
 <td class="success">test4()</td>
 <td class="success">0.055s</td>
+=======
+<td class="success">test1()</td>
+<td class="success">0.148s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">test2()</td>
+<td class="success">0.223s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">test3()</td>
+<td class="success">0.137s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">test4()</td>
+<td class="success">0.128s</td>
+>>>>>>> 540d0d3 ( ajout test connection reussi)
 <td class="success">passed</td>
 </tr>
 </table>
 </div>
+<<<<<<< HEAD
 <div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
@@ -316,6 +344,16 @@ Vous devez ajouter des conversions explicites de type.
 	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
 	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:118)
 	at be.helha.daoimpl.UserDaoImpl.getUser(UserDaoImpl.java:29)
+=======
+<div id="tab1" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>java.sql.SQLFeatureNotSupportedException: La fonction org.postgresql.jdbc.PgResultSet.getNString(int) n'est pas encore implémentée.
+	at org.postgresql.Driver.notImplemented(Driver.java:765)
+	at org.postgresql.jdbc.PgResultSet.getNString(PgResultSet.java:3916)
+	at org.postgresql.jdbc.PgResultSet.getNString(PgResultSet.java:3920)
+	at be.helha.daoimpl.UserDaoImpl.getUser(UserDaoImpl.java:34)
+>>>>>>> 540d0d3 ( ajout test connection reussi)
 	at be.helha.tests.Test_UserDao.test1(Test_UserDao.java:31)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -400,6 +438,7 @@ Vous devez ajouter des conversions explicites de type.
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+<<<<<<< HEAD
 org.postgresql.util.PSQLException: ERREUR: la fonction crypt(character varying, character varying) n'existe pas
   Indice : Aucune fonction ne correspond au nom donné et aux types d'arguments.
 Vous devez ajouter des conversions explicites de type.
@@ -508,6 +547,13 @@ Vous devez ajouter des conversions explicites de type.
 	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
 	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:118)
 	at be.helha.daoimpl.UserDaoImpl.getUser(UserDaoImpl.java:29)
+=======
+java.sql.SQLFeatureNotSupportedException: La fonction org.postgresql.jdbc.PgResultSet.getNString(int) n'est pas encore implémentée.
+	at org.postgresql.Driver.notImplemented(Driver.java:765)
+	at org.postgresql.jdbc.PgResultSet.getNString(PgResultSet.java:3916)
+	at org.postgresql.jdbc.PgResultSet.getNString(PgResultSet.java:3920)
+	at be.helha.daoimpl.UserDaoImpl.getUser(UserDaoImpl.java:34)
+>>>>>>> 540d0d3 ( ajout test connection reussi)
 	at be.helha.tests.Test_UserDao.test3(Test_UserDao.java:47)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -592,6 +638,7 @@ Vous devez ajouter des conversions explicites de type.
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+<<<<<<< HEAD
 org.postgresql.util.PSQLException: ERREUR: la fonction crypt(character varying, character varying) n'existe pas
   Indice : Aucune fonction ne correspond au nom donné et aux types d'arguments.
 Vous devez ajouter des conversions explicites de type.
@@ -688,6 +735,8 @@ Vous devez ajouter des conversions explicites de type.
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+=======
+>>>>>>> 540d0d3 ( ajout test connection reussi)
 </pre>
 </span>
 </div>
@@ -699,7 +748,11 @@ Vous devez ajouter des conversions explicites de type.
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
+<<<<<<< HEAD
 <a href="http://www.gradle.org">Gradle 7.3.3</a> at 18 mai 2022 à 11:30:15</p>
+=======
+<a href="http://www.gradle.org">Gradle 7.3.3</a> at 18 mai 2022 à 09:07:18</p>
+>>>>>>> 540d0d3 ( ajout test connection reussi)
 </div>
 </div>
 </body>

@@ -4,9 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
+import be.helha.daoimpl.UserDaoImpl;
 import be.helha.domaine.Bundle;
 import be.helha.domaine.User;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,6 +23,7 @@ public class ControleurPrincipal implements Initializable {
 
 	private static ControleurPrincipal singleton;
 	private GestionnaireUseCases gestionnaire = GestionnaireUseCases.getInstance();
+	private UserDaoImpl userDao;
 	private Bundle bundle = new Bundle();
 	private User user = new User();
 
@@ -46,6 +48,7 @@ public class ControleurPrincipal implements Initializable {
 		Parent root;
 		try
 		{
+			 
 			if(btConnecter.getText()=="Déconnecter")
 			{
 				btConnecter.setText("Connecter");
@@ -72,6 +75,7 @@ public class ControleurPrincipal implements Initializable {
 				stage.showAndWait();
 				if((boolean)bundle.get(Bundle.OPERATION_REUSSIE)==true)
 				{
+					//garnirBundle();
 					btConnecter.setText("Déconnecter");
 					btAjouter.setDisable(false);
 					btLister.setDisable(false);
@@ -80,7 +84,7 @@ public class ControleurPrincipal implements Initializable {
 					btSupprimer.setDisable(false);
 					gestionnaire.connecterUser(bundle);
 					this.user = (User)bundle.get(Bundle.USER);
-					tfMessage.setText(user.getNom());
+					tfMessage.setText(bundle.MESSAGE);
 				}
 			}
 			
@@ -91,6 +95,12 @@ public class ControleurPrincipal implements Initializable {
 			e.printStackTrace();
 		}
 	}
+	private void garnirBundle() {
+        User user = new User();
+        
+        user = userDao.getUser((String)bundle.get(user.getEmail()), (String)bundle.get(user.getPassword()));
+        bundle.put(Bundle.USER, user);
+    }
 	public void ajouter()
 	{
 		

@@ -31,6 +31,7 @@ public class GestionUsersImpl implements GestionUsers {
 			} else {
 				message = "Identification réussie. Vous êtes connecté.";
 				operationReussie = true;
+				
 				bundle.put(Bundle.USER, userDB);
 			}
 		}
