@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="be.helha.tests.Test_UserDao" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-05-19T16:02:27" hostname="LAPTOP-TBUVHM0E" time="0.277">
+<testsuite name="be.helha.tests.Test_UserDao" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-05-19T16:04:18" hostname="LAPTOP-TBUVHM0E" time="0.352">
   <properties/>
-  <testcase name="test1()" classname="be.helha.tests.Test_UserDao" time="0.06"/>
-  <testcase name="test2()" classname="be.helha.tests.Test_UserDao" time="0.076"/>
-  <testcase name="test3()" classname="be.helha.tests.Test_UserDao" time="0.093"/>
-  <testcase name="test4()" classname="be.helha.tests.Test_UserDao" time="0.046"/>
+  <testcase name="test1()" classname="be.helha.tests.Test_UserDao" time="0.057"/>
+  <testcase name="test2()" classname="be.helha.tests.Test_UserDao" time="0.053"/>
+  <testcase name="test3()" classname="be.helha.tests.Test_UserDao" time="0.199"/>
+  <testcase name="test4()" classname="be.helha.tests.Test_UserDao" time="0.039"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[org.postgresql.util.PSQLException: ERREUR: invalid salt
 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
