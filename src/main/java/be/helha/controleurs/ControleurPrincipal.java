@@ -138,7 +138,8 @@ public class ControleurPrincipal implements Initializable {
 	}
 
 
-	public void setBundle(Bundle bundle) {
+	public void setBundle(Bundle bundle)
+	{
 		this.bundle = bundle;
 	}
 	
