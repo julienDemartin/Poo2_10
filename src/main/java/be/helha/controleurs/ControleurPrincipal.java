@@ -44,11 +44,13 @@ public class ControleurPrincipal implements Initializable {
 	}
 
 
-	public void trtBoutonConnecter() {
+	public void trtBoutonConnecter() 
+	{
+		
 		Parent root;
 		try
 		{
-			 
+		
 			if(btConnecter.getText()=="Déconnecter")
 			{
 				btConnecter.setText("Connecter");
@@ -59,7 +61,7 @@ public class ControleurPrincipal implements Initializable {
 				btSupprimer.setDisable(true);
 				gestionnaire.deconnecterUser(bundle);
 				this.user= (User)bundle.get(Bundle.USER);
-				tfMessage.setText(user.getNom()+" à été déconnecter");
+				tfMessage.setText(this.user.getNom()+" à été déconnecter");
 				
 			}
 			else	
@@ -84,7 +86,7 @@ public class ControleurPrincipal implements Initializable {
 					btSupprimer.setDisable(false);
 					gestionnaire.connecterUser(bundle);
 					this.user = (User)bundle.get(Bundle.USER);
-					tfMessage.setText(bundle.MESSAGE);
+					tfMessage.setText(this.user.getNumero());
 				}
 			}
 			
@@ -128,6 +130,16 @@ public class ControleurPrincipal implements Initializable {
 	private void majMessage() {
 		String message = (String) bundle.get(Bundle.MESSAGE);
 		this.tfMessage.setText(message);
+	}
+
+
+	public Bundle getBundle() {
+		return bundle;
+	}
+
+
+	public void setBundle(Bundle bundle) {
+		this.bundle = bundle;
 	}
 	
 	

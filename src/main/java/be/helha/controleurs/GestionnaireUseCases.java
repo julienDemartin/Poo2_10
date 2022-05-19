@@ -6,12 +6,7 @@ import be.helha.usecase.GestionBanque;
 import be.helha.usecase.GestionUsers;
 
 import be.helha.usecaseimpl.GestionUsersImpl;
-/**
- * Contrôleur de l'application (couche logique)
- * C'est un singleton.
- * @author Olivier Legrand
- *
- */
+
 public class GestionnaireUseCases implements GestionUsers {
 
 	private static final GestionnaireUseCases INSTANCE = new GestionnaireUseCases();

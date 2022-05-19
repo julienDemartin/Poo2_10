@@ -12,5 +12,6 @@
       <Text layoutX="64.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
       <Text layoutX="54.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
       <Button layoutX="198.0" layoutY="98.0" mnemonicParsing="false" onAction="#trtBoutonConnecter" text="Connecter" />
+      <Text fx:id="message" layoutX="53.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="49.951171875" />
    </children>
 </AnchorPane>

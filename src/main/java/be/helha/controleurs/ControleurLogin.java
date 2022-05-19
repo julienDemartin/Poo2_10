@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
+import javafx.scene.text.Text;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -17,9 +18,12 @@ public class ControleurLogin implements Initializable {
 
 	@FXML
 	private TextField tfEmail, tfPassword;
+	@FXML
+	private Text message;
 
 	private GestionnaireUseCases gestionnaire = GestionnaireUseCases.getInstance();
-
+	private ControleurPrincipal control = ControleurPrincipal.getInstance();
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		tfEmail.setText("toto@gmail.com");
@@ -28,7 +32,7 @@ public class ControleurLogin implements Initializable {
 
 	public void trtBoutonConnecter() 
 	{
-		Bundle bundle = new Bundle();
+		Bundle bundle=control.getBundle();
 		User user = new User();
 		user.setEmail(tfEmail.getText());
 		user.setPassword(tfPassword.getText());
@@ -40,6 +44,15 @@ public class ControleurLogin implements Initializable {
 			
 			this.gestionnaire.connecterUser(bundle);
 			tfEmail.getScene().getWindow().hide();
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Identification");
+			alert.setHeaderText("");
+			User users = (User) bundle.get(Bundle.USER);
+			String message ="Bienvenu "+users.getNom();
+			
+			alert.setContentText(message);
+			
+			alert.showAndWait();
 		}
 		if((boolean)bundle.get(Bundle.OPERATION_REUSSIE)==false)
 		{

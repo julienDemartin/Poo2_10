@@ -15,20 +15,25 @@ public class GestionUsersImpl implements GestionUsers {
 	}
 
 	@Override
-	public void connecterUser(Bundle bundle) {
+	public void connecterUser(Bundle bundle)
+	{
 		User userDB = null;
 		boolean operationReussie = false;
 		String message;
 		User user = (User) bundle.get(Bundle.USER);
-		if (user == null) {
+		if (user == null) 
+		{
 			message = "Pas d'utilisateur!";
-		} else {
+		} 
+		else 
+		   {
 			String email = user.getEmail();
 			String password = user.getPassword();
 			userDB = this.userDao.getUser(email, password);
 			if (userDB == null) {
 				message = "Echec lors de l'identification.";
-			} else {
+			} else 
+			{
 				message = "Identification réussie. Vous êtes connecté.";
 				operationReussie = true;
 				
