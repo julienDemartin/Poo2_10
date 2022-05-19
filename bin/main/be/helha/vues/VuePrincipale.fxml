@@ -48,7 +48,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label prefHeight="38.0" prefWidth="84.0" text="Nom">
+            <Label prefHeight="38.0" prefWidth="84.0" text="Montant">
                <font>
                   <Font size="14.0" />
                </font>
@@ -56,7 +56,7 @@
             <Label prefHeight="38.0" prefWidth="150.0" text="Numero de compte" GridPane.rowIndex="1" />
             <Label prefHeight="38.0" prefWidth="82.0" text="ToDo?" GridPane.rowIndex="3" />
             <Label prefHeight="38.0" prefWidth="82.0" text="ToDo?" GridPane.rowIndex="2" />
-            <TextField fx:id="tfNom" GridPane.columnIndex="1" />
+            <TextField fx:id="tfMontant" GridPane.columnIndex="1" />
             <TextField fx:id="tfNumero" prefHeight="26.0" prefWidth="318.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
            <!--   <TextField fx:id="tfCouleur" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="tfBrasserie" GridPane.columnIndex="1" GridPane.rowIndex="3" />-->
