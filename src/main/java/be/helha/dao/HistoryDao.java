@@ -5,5 +5,5 @@ import be.helha.domaine.History;
 
 public interface HistoryDao extends Dao{
 	boolean ajouterHistory(History history);
-	List<History> listerHistory();
+	List<History> listerHistory(String cpteDonneur);
 }

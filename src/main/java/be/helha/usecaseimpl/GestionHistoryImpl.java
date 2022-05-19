@@ -21,6 +21,20 @@ public class GestionHistoryImpl implements GestionHistory {
 		String message = "";
 		History history = (History) bundle.get(Bundle.HISTORY);
 		// condition
+		if (history.getCpteDonneur() == null || history.getCpteDonneur().isEmpty()) {
+			message = "L'ajout n'a pas pu être réalisé. Il manque un compte donneur";
+		}else if (history.getCpteReceveur() == null || history.getCpteReceveur().isEmpty()) {
+			message = "L'ajout n'a pas pu être réalisé. Il manque un compte receveur";
+		}else if (history.getMontant() == 0) {
+			message = "L'ajout n'a pas pu être réalisé. Il manque un montant";
+		}else {
+			ajoutReussi = this.historyDao.ajouterHistory(history);
+			if(ajoutReussi) {
+				message = "Ajout réalisé avec succès";
+			}else {
+				message = "L'ajout n'a pas pu être réalisé";
+			}
+		}
 		bundle.put(Bundle.OPERATION_REUSSIE, ajoutReussi);
 		bundle.put(Bundle.HISTORY, history);
 		bundle.put(Bundle.MESSAGE, message);
@@ -30,8 +44,9 @@ public class GestionHistoryImpl implements GestionHistory {
 	public void lister(Bundle bundle) {
 		boolean listeOk = true;
 		String message = "";
+		String cpteDonneur = (String) bundle.get(Bundle.CPTEDONNEUR);
 		List<History> listeHistory = null;
-		listeHistory = this.historyDao.listerHistory();
+		listeHistory = this.historyDao.listerHistory(cpteDonneur);
 		if (listeHistory==null) {
 			listeOk = false;
 		} else if (listeHistory.isEmpty())

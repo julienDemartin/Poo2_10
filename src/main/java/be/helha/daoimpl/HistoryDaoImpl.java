@@ -9,8 +9,8 @@ import be.helha.dao.HistoryDao;
 import be.helha.domaine.History;
 
 public class HistoryDaoImpl implements HistoryDao {
-	private static final String AJOUT = "INSERT INTO History (id, cpteDonneur, cpteReceveur, montant) VALUES (?,?,?,?)";
-	private static final String LISTER = "SELECT * FROM History h ORDER BY h.";
+	private static final String AJOUT = "INSERT INTO History (cpteDonneur, cpteReceveur, montant) VALUES (?,?,?)";
+	private static final String LISTER = "SELECT * FROM History h WHERE cpteDonneur=?";
 	
 	public HistoryDaoImpl() {
 		
@@ -24,7 +24,7 @@ public class HistoryDaoImpl implements HistoryDao {
 		try {
 			con = DaoFactory.getInstance().getConnexion();
 			ps = con.prepareStatement(AJOUT);
-			ps.setInt(1, history.getHistoryID()); 
+			//ps.setString(1, history.getHistoryID()); 
 			ps.setString(2, history.getCpteDonneur().trim());
 			ps.setString(3, history.getCpteReceveur().trim());
 			ps.setDouble(4, history.getMontant());
@@ -35,13 +35,13 @@ public class HistoryDaoImpl implements HistoryDao {
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		} finally {
-			// comment cloturer?
+			cloturer(null, ps, con);
 		}
 		return ajoutReussi;
 	}
 
 	@Override
-	public List<History> listerHistory() {
+	public List<History> listerHistory(String cpteDonneur) {
 		List<History> liste = new ArrayList<History>();
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -49,19 +49,37 @@ public class HistoryDaoImpl implements HistoryDao {
 		try {
 			con = DaoFactory.getInstance().getConnexion();
 			ps = con.prepareStatement(LISTER);
+			ps.setString(1, cpteDonneur);
 			rs = ps.executeQuery();
-			String cpteDonneur = "";
 			while (rs.next()) {
 				cpteDonneur = rs.getString("cpteDonneur");
-				History history = new History(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4));
+				History history = new History(cpteDonneur, rs.getString(2), rs.getDouble(3));
 				liste.add(history);
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
-			// comment cloturer?
+			cloturer(null, ps, con);
 		}
 		return liste;
+	}
+	
+	private void cloturer(ResultSet rs, PreparedStatement ps, Connection con) {
+		try {
+			if (rs != null)
+				rs.close();
+		} catch (Exception ex) {
+		}
+		try {
+			if (ps != null)
+				ps.close();
+		} catch (Exception ex) {
+		}
+		try {
+			if (con != null)
+				con.close();
+		} catch (Exception ex) {
+		}
 	}
 
 	
