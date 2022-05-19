@@ -16,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -35,10 +36,11 @@ public class ControleurPrincipal implements Initializable {
 	private TextField tfNom, tfNumero, tfMessage;
 	@FXML
 	private Button btAjouter, btSupprimer, btModifier, btLister, btRechercher, btConnecter;
-
+	@FXML Text tfName,tfEmail,tfSolde,tfDecouvert;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		tfMessage.setText("Veuillez vous connecter");
+		tfName.setText("");
 		if (singleton == null)
 			singleton = this; // on mémorise afin d'y accéder par la suite
 	}
@@ -61,11 +63,15 @@ public class ControleurPrincipal implements Initializable {
 				btSupprimer.setDisable(true);
 				gestionnaire.deconnecterUser(bundle);
 				this.user= (User)bundle.get(Bundle.USER);
-				tfMessage.setText(this.user.getNom()+" à été déconnecter");
-				
+				tfMessage.setText(this.user.getNom()+" a été déconnecté");
+				tfName.setText("");
+				tfEmail.setText("");
+				tfSolde.setText("");
+				tfDecouvert.setText("");
 			}
 			else	
 			{
+				
 				tfMessage.setText("");
 				root = FXMLLoader.load(getClass().getResource("/be/helha/vues/VueLogin.fxml"));
 				Stage stage = new Stage();
@@ -77,7 +83,7 @@ public class ControleurPrincipal implements Initializable {
 				stage.showAndWait();
 				if((boolean)bundle.get(Bundle.OPERATION_REUSSIE)==true)
 				{
-					//garnirBundle();
+					
 					btConnecter.setText("Déconnecter");
 					btAjouter.setDisable(false);
 					btLister.setDisable(false);
@@ -86,7 +92,17 @@ public class ControleurPrincipal implements Initializable {
 					btSupprimer.setDisable(false);
 					gestionnaire.connecterUser(bundle);
 					this.user = (User)bundle.get(Bundle.USER);
-					tfMessage.setText(this.user.getNumero());
+					tfMessage.setText(this.user.getNom()+" est bien connecté");
+					tfName.setText(this.user.getNom());
+					tfEmail.setText(this.user.getEmail());
+					String convertString;
+					double convertDouble;
+					convertDouble = this.user.getSolde();
+					convertString =  this.convertDoubleToString(convertDouble);
+					tfSolde.setText(convertString);
+					convertDouble = this.user.getDecouvert();
+					convertString=  this.convertDoubleToString(convertDouble);
+					tfDecouvert.setText(convertString);
 				}
 			}
 			
@@ -96,6 +112,19 @@ public class ControleurPrincipal implements Initializable {
 		{
 			e.printStackTrace();
 		}
+	}
+	public Double convertStringToDouble(String string)
+	{
+		double num;
+		num = Double.parseDouble(string);
+		
+		return num;
+	}
+	public String convertDoubleToString(double unDouble)
+	{
+		String string;
+		string = String.valueOf(unDouble);
+		return string;
 	}
 	private void garnirBundle() {
         User user = new User();
