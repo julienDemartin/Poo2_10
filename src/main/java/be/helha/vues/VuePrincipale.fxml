@@ -24,20 +24,18 @@
             </AnchorPane>
         </content>
       </TitledPane>
-      <HBox layoutX="1.0" layoutY="175.0" prefHeight="39.0" prefWidth="531.0" spacing="5.0">
+      <HBox layoutX="1.0" layoutY="175.0" prefHeight="39.0" prefWidth="531.0" spacing="70.0">
          <children>
-              <Button fx:id="btAjouter" disable="true" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
-            <Button fx:id="btModifier" disable="true" mnemonicParsing="false" onAction="#modifier" text="Modifier" />
-            <Button fx:id="btSupprimer" disable="true" mnemonicParsing="false" onAction="#supprimer" text="Supprimer" />
-            <Button fx:id="btRechercher" disable="true" mnemonicParsing="false" onAction="#rechercher" text="Rechercher" />
-            <Button fx:id="btLister" disable="true" mnemonicParsing="false" onAction="#lister" text="Lister" />
-            <Button fx:id="btConnecter" mnemonicParsing="false" onAction="#trtBoutonConnecter" prefHeight="18.0" prefWidth="112.0" text="Connecter" />
+              <Button fx:id="btVirement" disable="true" mnemonicParsing="false" onAction="#effectuerVirement" text="Effectier un virement" />
+           
+            <Button fx:id="btLister" disable="true" mnemonicParsing="false" onAction="#lister" text="Historique des virements" />
+            <Button fx:id="btConnecter" mnemonicParsing="false" onAction="#trtBoutonConnecter" prefHeight="18.0" prefWidth="112.0" text="Connecter" textAlignment="CENTER" />
          </children>
          <padding>
             <Insets left="7.0" />
          </padding>
       </HBox>
-      <GridPane prefHeight="86.0" prefWidth="506.0" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="8.0">
+      <GridPane layoutX="29.0" prefHeight="86.0" prefWidth="506.0" AnchorPane.leftAnchor="29.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="200.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="439.0" minWidth="10.0" prefWidth="300.0" />
@@ -47,7 +45,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label prefHeight="38.0" prefWidth="138.0" text="Numero de compte">
+            <Label prefHeight="38.0" prefWidth="138.0" text="Numéro de compte">
                <font>
                   <Font size="14.0" />
                </font>
@@ -59,7 +57,7 @@
             <TextField fx:id="tfBrasserie" GridPane.columnIndex="1" GridPane.rowIndex="3" />-->
          </children>
       </GridPane>
-      <Text layoutX="29.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Information utilisateur :" />
+      <Text layoutX="29.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informations utilisateur :" />
       <Text layoutX="29.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom :" />
       <Text layoutX="29.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email :" />
       <Text layoutX="262.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solde :" />

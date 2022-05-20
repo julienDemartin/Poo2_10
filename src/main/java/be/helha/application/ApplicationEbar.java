@@ -17,7 +17,7 @@ public class ApplicationEbar extends Application {
 				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				primaryStage.setScene(scene);
 				primaryStage.setTitle("CPH Banque");
-				primaryStage.getIcons().add(new Image("/be/helha/application/banque.jpg"));
+				primaryStage.getIcons().add(new Image("/be/helha/application/CPHH.jpg"));
 				primaryStage.setResizable(false);
 				primaryStage.show();
 			} catch (Exception e) {

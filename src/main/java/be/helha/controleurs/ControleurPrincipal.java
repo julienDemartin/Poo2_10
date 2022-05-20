@@ -35,7 +35,7 @@ public class ControleurPrincipal implements Initializable {
 	@FXML
 	private TextField tfNom, tfNumero, tfMessage;
 	@FXML
-	private Button btAjouter, btSupprimer, btModifier, btLister, btRechercher, btConnecter;
+	private Button  btLister, btConnecter,btVirement;
 	@FXML Text tfName,tfEmail,tfSolde,tfDecouvert;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -56,11 +56,9 @@ public class ControleurPrincipal implements Initializable {
 			if(btConnecter.getText()=="Déconnecter")
 			{
 				btConnecter.setText("Connecter");
-				btAjouter.setDisable(true);
+				
 				btLister.setDisable(true);
-				btModifier.setDisable(true);
-				btRechercher.setDisable(true);
-				btSupprimer.setDisable(true);
+				btVirement.setDisable(true);
 				gestionnaire.deconnecterUser(bundle);
 				this.user= (User)bundle.get(Bundle.USER);
 				tfMessage.setText(this.user.getNom()+" a été déconnecté");
@@ -76,7 +74,7 @@ public class ControleurPrincipal implements Initializable {
 				root = FXMLLoader.load(getClass().getResource("/be/helha/vues/VueLogin.fxml"));
 				Stage stage = new Stage();
 				stage.setTitle("Connexion");
-				stage.getIcons().add(new Image("/be/helha/application/banque.jpg"));
+				stage.getIcons().add(new Image("/be/helha/application/CPHH.jpg"));
 				stage.initModality(Modality.APPLICATION_MODAL);
 				stage.setScene(new Scene(root));
 				stage.setResizable(false);
@@ -85,11 +83,10 @@ public class ControleurPrincipal implements Initializable {
 				{
 					
 					btConnecter.setText("Déconnecter");
-					btAjouter.setDisable(false);
+					
 					btLister.setDisable(false);
-					btModifier.setDisable(false);
-					btRechercher.setDisable(false);
-					btSupprimer.setDisable(false);
+					btVirement.setDisable(false);
+					
 					gestionnaire.connecterUser(bundle);
 					this.user = (User)bundle.get(Bundle.USER);
 					tfMessage.setText(this.user.getNom()+" est bien connecté");
@@ -132,25 +129,14 @@ public class ControleurPrincipal implements Initializable {
         user = userDao.getUser((String)bundle.get(user.getEmail()), (String)bundle.get(user.getPassword()));
         bundle.put(Bundle.USER, user);
     }
-	public void ajouter()
-	{
-		
-	}
-	public void supprimer()
-	{
-		
-	}
-	public void rechercher()
-	{
-		
-	}
-	public void modifier()
-	{
-		
-	}
+	
 	public void lister()
 	{
-		
+		//todo
+	}
+	public void effectuerVirement()
+	{
+		//todo
 	}
 	
 
