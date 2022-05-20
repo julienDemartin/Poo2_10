@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import be.helha.daoimpl.UserDaoImpl;
 import be.helha.domaine.Bundle;
+import be.helha.domaine.History;
 import be.helha.domaine.User;
 
 import javafx.fxml.FXML;
@@ -27,6 +28,7 @@ public class ControleurPrincipal implements Initializable {
 	private UserDaoImpl userDao;
 	private Bundle bundle = new Bundle();
 	private User user = new User();
+	private History history = new History();
 
 	public static ControleurPrincipal getInstance() {
 		return singleton;
@@ -130,17 +132,26 @@ public class ControleurPrincipal implements Initializable {
         bundle.put(Bundle.USER, user);
     }
 	
-	public void lister()
-	{
-		//todo
+	public void lister(){
+		Parent root;
+		try {
+			tfMessage.setText("");
+			root = FXMLLoader.load(getClass().getResource("/be/helha/vues/vueListe.fxml"));
+			Stage stage = new Stage();
+			stage.setTitle("Historique des virements");
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setScene(new Scene(root));
+			stage.setResizable(false);
+			stage.showAndWait();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
+	
 	public void effectuerVirement()
 	{
 		//todo
 	}
-	
-
-	
 
 	private void majMessage() {
 		String message = (String) bundle.get(Bundle.MESSAGE);

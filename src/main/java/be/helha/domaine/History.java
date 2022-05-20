@@ -5,6 +5,9 @@ public class History {
 	private String cpteReceveur;
 	private Double montant;
 	
+	public History () {
+		
+	}
 	public History(String cpteDonneur, String cpteReceveur, Double montant) {
 		super();
 		this.cpteDonneur = cpteDonneur;

@@ -3,16 +3,18 @@ package be.helha.controleurs;
 import be.helha.domaine.Bundle;
 import be.helha.domaine.User;
 import be.helha.usecase.GestionBanque;
+import be.helha.usecase.GestionHistory;
 import be.helha.usecase.GestionUsers;
-
+import be.helha.usecaseimpl.GestionHistoryImpl;
 import be.helha.usecaseimpl.GestionUsersImpl;
 
-public class GestionnaireUseCases implements GestionUsers {
+public class GestionnaireUseCases implements GestionUsers, GestionHistory {
 
 	private static final GestionnaireUseCases INSTANCE = new GestionnaireUseCases();
 
 	private User user; // null si pas identifié par le système
 	private GestionUsers gestionUsers;
+	private GestionHistory gestionHistory;
 	
 
 	public static GestionnaireUseCases getInstance()
@@ -23,7 +25,7 @@ public class GestionnaireUseCases implements GestionUsers {
 	private GestionnaireUseCases() 
 	{
 		this.gestionUsers = new GestionUsersImpl();
-		
+		this.gestionHistory = new GestionHistoryImpl();
 		this.user = null; // pas de user connecté
 	}
 
@@ -58,6 +60,26 @@ public class GestionnaireUseCases implements GestionUsers {
 			this.user = null; // utilisateur déconnecté
 			bundle.put(Bundle.MESSAGE, "Vous avez été déconnecté.");
 			bundle.put(Bundle.OPERATION_REUSSIE, true);
+		}
+	}
+
+	@Override
+	public void ajouterHistory(Bundle bundle) {
+		if (user == null) {
+			bundle.put(Bundle.MESSAGE, "Opération impossible, Pas d'utilisateur connecté");
+			bundle.put(Bundle.OPERATION_REUSSIE, false);
+		} else {
+			this.gestionHistory.ajouterHistory(bundle);
+		}
+	}
+
+	@Override
+	public void lister(Bundle bundle) {
+		if (user == null) {
+			bundle.put(Bundle.MESSAGE, "Opération impossible, Pas d'utilisateur connecté");
+			bundle.put(Bundle.OPERATION_REUSSIE, false);
+		} else {
+			this.gestionHistory.lister(bundle);
 		}
 	}
 

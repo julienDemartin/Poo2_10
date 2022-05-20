@@ -24,18 +24,18 @@
             </AnchorPane>
         </content>
       </TitledPane>
-      <HBox layoutX="1.0" layoutY="175.0" prefHeight="39.0" prefWidth="531.0" spacing="5.0">
+      <HBox layoutX="1.0" layoutY="175.0" prefHeight="39.0" prefWidth="531.0" spacing="70.0">
          <children>
-              <Button fx:id="btVirement" disable="true" mnemonicParsing="false" onAction="#effectuerVirement" text="Effectuer un virement" />
+              <Button fx:id="btVirement" disable="true" mnemonicParsing="false" onAction="#effectuerVirement" text="Effectier un virement" />
            
             <Button fx:id="btLister" disable="true" mnemonicParsing="false" onAction="#lister" text="Historique des virements" />
-            <Button fx:id="btConnecter" mnemonicParsing="false" onAction="#trtBoutonConnecter" prefHeight="18.0" prefWidth="112.0" text="Connecter" />
+            <Button fx:id="btConnecter" mnemonicParsing="false" onAction="#trtBoutonConnecter" prefHeight="18.0" prefWidth="112.0" text="Connecter" textAlignment="CENTER" />
          </children>
          <padding>
             <Insets left="7.0" />
          </padding>
       </HBox>
-      <GridPane prefHeight="86.0" prefWidth="506.0" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="8.0">
+      <GridPane layoutX="29.0" prefHeight="86.0" prefWidth="506.0" AnchorPane.leftAnchor="29.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="200.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="439.0" minWidth="10.0" prefWidth="300.0" />
