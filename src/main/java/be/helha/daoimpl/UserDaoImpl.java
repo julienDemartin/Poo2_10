@@ -10,6 +10,7 @@ import be.helha.domaine.User;
 
 public class UserDaoImpl implements UserDao {
 	private static final String GET = "SELECT * FROM account WHERE email=? and mdp = crypt(?, mdp)";
+	private static final String UPDATE = "UPDATE account SET solde = ? WHERE numero = ? ";
 
 	public UserDaoImpl() {
 	}
@@ -61,6 +62,52 @@ public class UserDaoImpl implements UserDao {
 				con.close();
 		} catch (Exception ex) {
 		}
+	}
+
+
+	@Override
+	public boolean ajouterMontant(String cptereceveur, Double montant) {
+		boolean ajoutReussi = false;
+		Connection con = null;
+		PreparedStatement ps = null;
+		try {
+			con = DaoFactory.getInstance().getConnexion();
+			ps = con.prepareStatement(UPDATE);
+			ps.setDouble(1, montant);
+			ps.setString(2, cptereceveur);
+			int resultat = ps.executeUpdate();
+			if (resultat == 1) {
+				ajoutReussi = true;
+			}
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			cloturer(null, ps, con);
+		}
+		return ajoutReussi;
+	}
+
+
+	@Override
+	public boolean retirerMontant(String cptedonneur, Double montant) {
+		boolean ajoutReussi = false;
+		Connection con = null;
+		PreparedStatement ps = null;
+		try {
+			con = DaoFactory.getInstance().getConnexion();
+			ps = con.prepareStatement(UPDATE);
+			ps.setDouble(1, montant);
+			ps.setString(2, cptedonneur);
+			int resultat = ps.executeUpdate();
+			if (resultat == 1) {
+				ajoutReussi = true;
+			}
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			cloturer(null, ps, con);
+		}
+		return ajoutReussi;
 	}
 	
 }

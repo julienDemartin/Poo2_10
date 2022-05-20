@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import be.helha.daoimpl.UserDaoImpl;
 import be.helha.domaine.Bundle;
+import be.helha.domaine.History;
 import be.helha.domaine.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,7 +32,7 @@ public class ControleurPrincipal implements Initializable {
 	}
 
 	@FXML
-	private TextField tfNom, tfNumero, tfMessage;
+	private TextField tfNom, tfMessage,tfNumero,tfMontant;
 	@FXML
 	private Button  btLister, btConnecter,btVirement;
 	@FXML Text tfName,tfEmail,tfSolde,tfDecouvert;
@@ -147,7 +148,15 @@ public class ControleurPrincipal implements Initializable {
 	
 	public void effectuerVirement()
 	{
-		//todo
+		Double montant = convertStringToDouble(tfMontant.getText());
+		String cptereceveur = tfNumero.getText().trim();
+		String cptedonneur = this.user.getNumero();
+		History history = new History(cptedonneur, cptereceveur, montant);
+		bundle.put(Bundle.HISTORY, history);
+		this.gestionnaire.ajouterHistory(bundle);
+		this.gestionnaire.ajouterMontant(bundle);
+		this.gestionnaire.retirerMontant(bundle);
+		majMessage();
 	}
 
 	private void majMessage() {

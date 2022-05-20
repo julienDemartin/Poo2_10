@@ -4,4 +4,6 @@ import be.helha.domaine.User;
 
 public interface UserDao extends Dao {
 	User getUser(String email, String password);
+	boolean ajouterMontant(String cptereceveur, Double montant);
+	boolean retirerMontant(String cptedonneur, Double montant);
 }

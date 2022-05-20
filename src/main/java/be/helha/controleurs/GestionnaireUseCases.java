@@ -82,6 +82,27 @@ public class GestionnaireUseCases implements GestionUsers, GestionHistory {
 		}
 	}
 
+	@Override
+	public void ajouterMontant(Bundle bundle) {
+		if (user == null) {
+			bundle.put(Bundle.MESSAGE, "Opération impossible, Pas d'utilisateur connecté");
+			bundle.put(Bundle.OPERATION_REUSSIE, false);
+		} else {
+			this.gestionUsers.ajouterMontant(bundle);
+		}
+		
+	}
+
+	@Override
+	public void retirerMontant(Bundle bundle) {
+		if (user == null) {
+			bundle.put(Bundle.MESSAGE, "Opération impossible, Pas d'utilisateur connecté");
+			bundle.put(Bundle.OPERATION_REUSSIE, false);
+		} else {
+			this.gestionUsers.retirerMontant(bundle);
+		}
+	}
+
 	
 
 	
