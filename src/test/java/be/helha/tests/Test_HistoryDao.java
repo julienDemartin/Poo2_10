@@ -1,6 +1,7 @@
 package be.helha.tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
@@ -17,12 +18,14 @@ public class Test_HistoryDao {
 	private static HistoryDao historyDao = (HistoryDao) DaoFactory.getInstance().getDaoImpl(HistoryDao.class);
 
 	@BeforeAll
-	static void initialiserListeBieres() {
-		histories = new ArrayList<History>(4);
-		histories.add(new History("2525", "258", 50.00));
-		histories.add(new History("2626", "752", 100.00));
-		histories.add(new History("2525", "645", 200.50));
-		histories.add(new History("2525", "125", 320.78));
+	static void initialiserListeHistory() {
+		histories = new ArrayList<History>(6);
+		histories.add(new History("2525", "1111", 50.25));
+		histories.add(new History("2626", "2222", 100.00));
+		histories.add(new History("2727", "3333", 200.50));
+		histories.add(new History("2828", "4444", 320.78));
+		histories.add(new History("2525", "5555", 75.45));
+		histories.add(new History("2525", "6666", 163.95));
 	}
 	
 	@Test
@@ -32,14 +35,20 @@ public class Test_HistoryDao {
 			assertTrue(historyDao.ajouterHistory(h));
 		}
 	}
-	
+	// Il faut que la table soit vide pour les tests Lister 1 et 2
 	@Test
 	@Order(2)
-	public void testLister() {
+	public void testLister1() {
 		List<History> historyObtenus = historyDao.listerHistory("2525");
-		for (int i = 0; i < historyObtenus.size(); i++) {
-			assertEquals(historyObtenus.get(i), histories.get(i));
-		}
+			assertEquals(3,historyObtenus.size());
+	}
+	
+	@Test
+	@Order(3)
+	public void testLister2() {
+		List<History> historyObtenus = historyDao.listerHistory("2626");
+			assertEquals(1,historyObtenus.size());
+			assertNotEquals(2,historyObtenus.size());
 	}
 
 

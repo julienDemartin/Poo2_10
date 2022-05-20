@@ -9,8 +9,8 @@ import be.helha.dao.HistoryDao;
 import be.helha.domaine.History;
 
 public class HistoryDaoImpl implements HistoryDao {
-	private static final String AJOUT = "INSERT INTO History (cpteDonneur, cpteReceveur, montant) VALUES (?,?,?)";
-	private static final String LISTER = "SELECT * FROM History h WHERE cpteDonneur=?";
+	private static final String AJOUT = "INSERT INTO History (cptedonneur, cptereceveur, montant) VALUES (?,?,?)";
+	private static final String LISTER = "SELECT * FROM History h WHERE cptedonneur=?";
 	
 	public HistoryDaoImpl() {
 		
@@ -25,9 +25,9 @@ public class HistoryDaoImpl implements HistoryDao {
 			con = DaoFactory.getInstance().getConnexion();
 			ps = con.prepareStatement(AJOUT);
 			//ps.setString(1, history.getHistoryID()); 
-			ps.setString(2, history.getCpteDonneur().trim());
-			ps.setString(3, history.getCpteReceveur().trim());
-			ps.setDouble(4, history.getMontant());
+			ps.setString(1, history.getCpteDonneur().trim());
+			ps.setString(2, history.getCpteReceveur().trim());
+			ps.setDouble(3, history.getMontant());
 			int resultat = ps.executeUpdate();
 			if (resultat == 1) {
 				ajoutReussi = true;
@@ -41,7 +41,7 @@ public class HistoryDaoImpl implements HistoryDao {
 	}
 
 	@Override
-	public List<History> listerHistory(String cpteDonneur) {
+	public List<History> listerHistory(String cptedonneur) {
 		List<History> liste = new ArrayList<History>();
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -49,11 +49,11 @@ public class HistoryDaoImpl implements HistoryDao {
 		try {
 			con = DaoFactory.getInstance().getConnexion();
 			ps = con.prepareStatement(LISTER);
-			ps.setString(1, cpteDonneur);
+			ps.setString(1, cptedonneur);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				cpteDonneur = rs.getString("cpteDonneur");
-				History history = new History(cpteDonneur, rs.getString(2), rs.getDouble(3));
+				cptedonneur = rs.getString("cptedonneur");
+				History history = new History(cptedonneur, rs.getString(2), rs.getDouble(3));
 				liste.add(history);
 			}
 		} catch (Exception ex) {

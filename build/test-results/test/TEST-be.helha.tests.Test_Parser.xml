@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="be.helha.tests.Test_Parser" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-05-19T16:04:18" hostname="LAPTOP-TBUVHM0E" time="0.028">
+<testsuite name="be.helha.tests.Test_Parser" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-05-20T07:06:07" hostname="LAPTOP-TBUVHM0E" time="0.016">
   <properties/>
-  <testcase name="testPostgres1()" classname="be.helha.tests.Test_Parser" time="0.005"/>
-  <testcase name="testPostgres2()" classname="be.helha.tests.Test_Parser" time="0.006"/>
-  <testcase name="testPostgres3()" classname="be.helha.tests.Test_Parser" time="0.004"/>
-  <testcase name="testPostgres4()" classname="be.helha.tests.Test_Parser" time="0.005"/>
-  <testcase name="testPostgres5()" classname="be.helha.tests.Test_Parser" time="0.006"/>
+  <testcase name="testPostgres1()" classname="be.helha.tests.Test_Parser" time="0.003"/>
+  <testcase name="testPostgres2()" classname="be.helha.tests.Test_Parser" time="0.002"/>
+  <testcase name="testPostgres3()" classname="be.helha.tests.Test_Parser" time="0.003"/>
+  <testcase name="testPostgres4()" classname="be.helha.tests.Test_Parser" time="0.003"/>
+  <testcase name="testPostgres5()" classname="be.helha.tests.Test_Parser" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

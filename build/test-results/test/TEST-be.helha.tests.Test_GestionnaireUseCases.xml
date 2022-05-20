@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="be.helha.tests.Test_GestionnaireUseCases" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-05-19T16:04:18" hostname="LAPTOP-TBUVHM0E" time="0.085">
+<testsuite name="be.helha.tests.Test_GestionnaireUseCases" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-05-20T07:06:06" hostname="LAPTOP-TBUVHM0E" time="0.047">
   <properties/>
   <testcase name="testDeconnexion()" classname="be.helha.tests.Test_GestionnaireUseCases" time="0.001"/>
-  <testcase name="testConnexion()" classname="be.helha.tests.Test_GestionnaireUseCases" time="0.074"/>
+  <testcase name="testConnexion()" classname="be.helha.tests.Test_GestionnaireUseCases" time="0.045"/>
   <testcase name="testReconnexion()" classname="be.helha.tests.Test_GestionnaireUseCases" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
