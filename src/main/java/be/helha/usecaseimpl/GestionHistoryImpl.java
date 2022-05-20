@@ -6,10 +6,12 @@ import be.helha.dao.HistoryDao;
 import be.helha.daoimpl.DaoFactory;
 import be.helha.domaine.Bundle;
 import be.helha.domaine.History;
+import be.helha.domaine.User;
 import be.helha.usecase.GestionHistory;
 
 public class GestionHistoryImpl implements GestionHistory {
 	private HistoryDao historyDao;
+	private User user = new User();
 	
 	public GestionHistoryImpl() {
 		this.historyDao = (HistoryDao) DaoFactory.getInstance().getDaoImpl(HistoryDao.class);
@@ -20,12 +22,11 @@ public class GestionHistoryImpl implements GestionHistory {
 		boolean ajoutReussi = false;
 		String message = "";
 		History history = (History) bundle.get(Bundle.HISTORY);
-		// condition
 		if (history.getCpteDonneur() == null || history.getCpteDonneur().isEmpty()) {
 			message = "L'ajout n'a pas pu être réalisé. Il manque un compte donneur";
 		}else if (history.getCpteReceveur() == null || history.getCpteReceveur().isEmpty()) {
 			message = "L'ajout n'a pas pu être réalisé. Il manque un compte receveur";
-		}else if (history.getMontant() == 0) {
+		}else if (history.getMontant() <= 0 || history.getMontant().isNaN()) {
 			message = "L'ajout n'a pas pu être réalisé. Il manque un montant";
 		}else {
 			ajoutReussi = this.historyDao.ajouterHistory(history);
@@ -44,9 +45,9 @@ public class GestionHistoryImpl implements GestionHistory {
 	public void lister(Bundle bundle) {
 		boolean listeOk = true;
 		String message = "";
-		String cpteDonneur = (String) bundle.get(Bundle.CPTEDONNEUR);
+		this.user = (User)bundle.get(Bundle.USER);
 		List<History> listeHistory = null;
-		listeHistory = this.historyDao.listerHistory(cpteDonneur);
+		listeHistory = this.historyDao.listerHistory(this.user.getNumero());
 		if (listeHistory==null) {
 			listeOk = false;
 		} else if (listeHistory.isEmpty())

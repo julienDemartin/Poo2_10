@@ -30,11 +30,12 @@ public class Test_HistoryDao {
 	
 	@Test
 	@Order(1)
-	public void testAjouter() {
+	public void testAjouter1() {
 		for (History h : histories) {
 			assertTrue(historyDao.ajouterHistory(h));
 		}
 	}
+	
 	// Il faut que la table soit vide pour les tests Lister 1 et 2
 	@Test
 	@Order(2)

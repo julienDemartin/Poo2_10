@@ -3,7 +3,6 @@ package be.helha.controleurs;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-
 import be.helha.domaine.Bundle;
 import be.helha.domaine.History;
 import javafx.collections.FXCollections;
@@ -13,7 +12,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 
 public class ControleurListe implements Initializable {
 
@@ -26,10 +24,11 @@ public class ControleurListe implements Initializable {
 	
 	private GestionnaireUseCases gestionnaire = GestionnaireUseCases.getInstance();
 	private ObservableList<History> tvObservableList = FXCollections.observableArrayList();
+	private ControleurPrincipal control = ControleurPrincipal.getInstance();
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		Bundle bundle = new Bundle();
+		Bundle bundle = control.getBundle();
 		gestionnaire.lister(bundle);
 		@SuppressWarnings("unchecked")
 		List<History> listeHistory = (List<History>) bundle.get(Bundle.LISTE);

@@ -17,7 +17,7 @@ import be.helha.domaine.Bundle;
 		public static final String OPERATION_REUSSIE = "operationReussie";
 		public static final String LISTE = "liste";
 		public static final String NOM = "nom";
-		public static final String CPTEDONNEUR = "cpteDonneur";
+		public static final String CPTEDONNEUR = "cptedonneur";
 	
 		private Map<String, Object> map = new HashMap<String, Object>();
 	

@@ -10,7 +10,7 @@ import be.helha.domaine.History;
 
 public class HistoryDaoImpl implements HistoryDao {
 	private static final String AJOUT = "INSERT INTO History (cptedonneur, cptereceveur, montant) VALUES (?,?,?)";
-	private static final String LISTER = "SELECT * FROM History h WHERE cptedonneur=?";
+	private static final String LISTER = "SELECT * FROM History h WHERE h.cptedonneur = ? ORDER BY h.historyid";
 	
 	public HistoryDaoImpl() {
 		
@@ -24,7 +24,6 @@ public class HistoryDaoImpl implements HistoryDao {
 		try {
 			con = DaoFactory.getInstance().getConnexion();
 			ps = con.prepareStatement(AJOUT);
-			//ps.setString(1, history.getHistoryID()); 
 			ps.setString(1, history.getCpteDonneur().trim());
 			ps.setString(2, history.getCpteReceveur().trim());
 			ps.setDouble(3, history.getMontant());
