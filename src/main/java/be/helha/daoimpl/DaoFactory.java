@@ -4,9 +4,7 @@ package be.helha.daoimpl;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
 import be.helha.dao.Dao;
-import be.helha.daoimpl.HistoryDaoImpl;
 /*
  * Classe chargée de fournir les instances des daos
  * et les connexions à la db (si spécifiée dans le fichier de configuration)

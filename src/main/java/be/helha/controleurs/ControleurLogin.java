@@ -2,17 +2,14 @@ package be.helha.controleurs;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import be.helha.domaine.Bundle;
 import be.helha.domaine.User;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class ControleurLogin implements Initializable {
 

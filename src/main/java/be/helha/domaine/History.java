@@ -8,6 +8,7 @@ public class History {
 	public History () {
 		
 	}
+	
 	public History(String cpteDonneur, String cpteReceveur, Double montant) {
 		super();
 		this.cpteDonneur = cpteDonneur;
@@ -48,6 +49,8 @@ public class History {
 
 	@Override
 	public String toString() {
-		return "History [cpteReceveur=" + cpteReceveur + ", montant=" + montant + "]";
-	}	
+		return "History [cpteDonneur=" + cpteDonneur + ", cpteReceveur=" + cpteReceveur + ", montant=" + montant + "]";
+	}
+
+	
 }

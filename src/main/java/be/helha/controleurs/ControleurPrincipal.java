@@ -3,12 +3,9 @@ package be.helha.controleurs;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import be.helha.daoimpl.UserDaoImpl;
 import be.helha.domaine.Bundle;
-import be.helha.domaine.History;
 import be.helha.domaine.User;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,7 +25,6 @@ public class ControleurPrincipal implements Initializable {
 	private UserDaoImpl userDao;
 	private Bundle bundle = new Bundle();
 	private User user = new User();
-	private History history = new History();
 
 	public static ControleurPrincipal getInstance() {
 		return singleton;
@@ -139,6 +135,7 @@ public class ControleurPrincipal implements Initializable {
 			root = FXMLLoader.load(getClass().getResource("/be/helha/vues/vueListe.fxml"));
 			Stage stage = new Stage();
 			stage.setTitle("Historique des virements");
+			stage.getIcons().add(new Image("/be/helha/application/CPHH.jpg"));
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
