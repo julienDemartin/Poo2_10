@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="be.helha.tests.Test_Parser" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-05-21T19:50:16" hostname="LAPTOP-TBUVHM0E" time="0.03">
+<testsuite name="be.helha.tests.Test_Parser" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-05-21T20:00:06" hostname="LAPTOP-TBUVHM0E" time="0.038">
   <properties/>
   <testcase name="testPostgres1()" classname="be.helha.tests.Test_Parser" time="0.007"/>
   <testcase name="testPostgres2()" classname="be.helha.tests.Test_Parser" time="0.006"/>
-  <testcase name="testPostgres3()" classname="be.helha.tests.Test_Parser" time="0.004"/>
-  <testcase name="testPostgres4()" classname="be.helha.tests.Test_Parser" time="0.004"/>
-  <testcase name="testPostgres5()" classname="be.helha.tests.Test_Parser" time="0.006"/>
+  <testcase name="testPostgres3()" classname="be.helha.tests.Test_Parser" time="0.008"/>
+  <testcase name="testPostgres4()" classname="be.helha.tests.Test_Parser" time="0.008"/>
+  <testcase name="testPostgres5()" classname="be.helha.tests.Test_Parser" time="0.007"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="be.helha.tests.Test_UserDao" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-05-21T19:50:16" hostname="LAPTOP-TBUVHM0E" time="0.237">
+<testsuite name="be.helha.tests.Test_UserDao" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-05-21T20:00:06" hostname="LAPTOP-TBUVHM0E" time="0.318">
   <properties/>
-  <testcase name="test1()" classname="be.helha.tests.Test_UserDao" time="0.051"/>
-  <testcase name="test2()" classname="be.helha.tests.Test_UserDao" time="0.056"/>
-  <testcase name="test3()" classname="be.helha.tests.Test_UserDao" time="0.052"/>
-  <testcase name="test4()" classname="be.helha.tests.Test_UserDao" time="0.077"/>
+  <testcase name="test1()" classname="be.helha.tests.Test_UserDao" time="0.158"/>
+  <testcase name="test2()" classname="be.helha.tests.Test_UserDao" time="0.043"/>
+  <testcase name="test3()" classname="be.helha.tests.Test_UserDao" time="0.043"/>
+  <testcase name="test4()" classname="be.helha.tests.Test_UserDao" time="0.045"/>
+  <testcase name="test5()" classname="be.helha.tests.Test_UserDao" time="0.026"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[org.postgresql.util.PSQLException: ERREUR: invalid salt
 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
@@ -15,7 +16,7 @@
 	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
 	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:118)
 	at be.helha.daoimpl.UserDaoImpl.getUser(UserDaoImpl.java:31)
-	at be.helha.tests.Test_UserDao.test4(Test_UserDao.java:55)
+	at be.helha.tests.Test_UserDao.test4(Test_UserDao.java:58)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

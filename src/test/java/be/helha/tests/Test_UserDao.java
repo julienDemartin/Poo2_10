@@ -22,6 +22,9 @@ public class Test_UserDao {
 	private static final String EMAIL_TATA = "tata@gmail.com";
 	private static final String NOM_TATA = "tata";
 	private static final String PASSWORD_TATA = "1234";
+	
+	private static final String NUMERO_2525 = "2525";
+		
 
 	private UserDao userDao = (UserDao) DaoFactory.getInstance().getDaoImpl(
 			UserDao.class);
@@ -30,8 +33,6 @@ public class Test_UserDao {
 	public void test1() {
 		User user = this.userDao.getUser(EMAIL_TATA, PASSWORD_TATA);
 		assertNotNull(user);
-		
-		
 		assertEquals(EMAIL_TATA, user.getEmail());
 		assertEquals(NOM_TATA, user.getNom());
 	}
@@ -54,5 +55,11 @@ public class Test_UserDao {
 	public void test4() {
 		User user = this.userDao.getUser(EMAIL_TITI, PASSWORD_TOTO);
 		assertNull(user);
+	}
+	
+	@Test
+	public void test5() {
+		User user = this.userDao.getReceveur(NUMERO_2525);
+		assertEquals(NUMERO_2525, user.getNumero());
 	}
 }
