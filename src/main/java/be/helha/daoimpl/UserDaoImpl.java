@@ -11,6 +11,7 @@ import be.helha.domaine.User;
 public class UserDaoImpl implements UserDao {
 	private static final String GET = "SELECT * FROM account WHERE email=? and mdp = crypt(?, mdp)";
 	private static final String UPDATE = "UPDATE account SET solde = ? WHERE numero = ? ";
+	private static final String GETRECEVEUR = "SELECT * FROM account WHERE numero = ?";
 
 	public UserDaoImpl() {
 	}
@@ -109,5 +110,33 @@ public class UserDaoImpl implements UserDao {
 		}
 		return ajoutReussi;
 	}
-	
+
+
+	@Override
+	public User getReceveur(String numero) {
+		User user = null;
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			con = DaoFactory.getInstance().getConnexion();
+			ps = con.prepareStatement(GETRECEVEUR);
+			ps.setString(1, numero.trim());
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				user = new User();
+				user.setEmail(rs.getString("email"));
+				user.setNom(rs.getString("nom"));
+				user.setPassword(rs.getString("mdp"));
+				user.setNumero(rs.getString("numero"));
+				user.setSolde(rs.getDouble("solde"));
+				user.setDecouvert(rs.getDouble("decouvert"));
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			cloturer(rs, ps, con);
+		}
+		return user;
+	}
 }

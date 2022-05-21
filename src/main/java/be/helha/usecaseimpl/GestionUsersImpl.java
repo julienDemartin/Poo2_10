@@ -50,16 +50,20 @@ public class GestionUsersImpl implements GestionUsers {
 		boolean ajoutReussi = false;
 		String message = "";
 		History history = (History)bundle.get(Bundle.HISTORY);
-		User user = (User)bundle.get(Bundle.USER);
-		Double MontantMax = (user.getSolde() - user.getDecouvert());
-		if (history.getCpteDonneur() == null || history.getCpteDonneur().isEmpty() || history.getCpteDonneur()!= user.getNumero()) {
+		User userDonneur = (User)bundle.get(Bundle.USER);
+		User userReceveur = userDao.getReceveur(history.getCpteReceveur());
+		Double MontantMax = (userDonneur.getSolde() - userDonneur.getDecouvert());
+		if (history.getCpteDonneur() == null || history.getCpteDonneur().isEmpty() || history.getCpteDonneur()!= userDonneur.getNumero()) {
 			message = "La modification n'a pas pu être réalisé, il manque le numéro de compte du donneur";
-		} else if (history.getCpteReceveur() == null || history.getCpteReceveur().isEmpty() || history.getCpteReceveur() == user.getNumero()) {
+		} else if (history.getCpteReceveur() == null || history.getCpteReceveur().isEmpty() || history.getCpteReceveur() == userDonneur.getNumero()) {
 			message = "La modification n'a pas pu être réalisé, il manque le numéro de compte du receveur, ou le compte receveur et donneur sont les memes";
-		} else if (history.getMontant() <= 0 || history.getMontant() > MontantMax) {
+		} else if (history.getMontant() <= 0 || history.getMontant() > MontantMax || history.getMontant().isNaN()) {
 			message = "La modification n'a pas pu être réalisé, le montant est négatif,nul, ou il dépasse votre limite";
+		} else if (history.getCpteReceveur().trim() != userReceveur.getNumero().trim()) {
+			message = "La modification n'a pas pu être réalisé, le compte receveur n'existe pas";
 		} else {
-			Double newSolde = user.getSolde() + history.getMontant();
+			Double newSolde = (userReceveur.getSolde() + history.getMontant());
+			System.out.println(newSolde);
 			ajoutReussi = this.userDao.ajouterMontant(history.getCpteReceveur(), newSolde);
 		}
 		bundle.put(Bundle.OPERATION_REUSSIE, ajoutReussi);
@@ -78,7 +82,7 @@ public class GestionUsersImpl implements GestionUsers {
 			message = "La modification n'a pas pu être réalisé, il manque le numéro de compte du donneur";
 		} else if (history.getCpteReceveur() == null || history.getCpteReceveur().isEmpty() || history.getCpteReceveur() == user.getNumero()) {
 			message = "La modification n'a pas pu être réalisé, il manque le numéro de compte du receveur, ou le compte receveur et donneur sont les memes";
-		} else if (history.getMontant() <= 0 || history.getMontant() > MontantMax) {
+		} else if (history.getMontant() <= 0 || history.getMontant() > MontantMax || history.getMontant().isNaN()) {
 			message = "La modification n'a pas pu être réalisé, le montant est négatif,nul, ou il dépasse votre limite";
 		} else {
 			Double newSolde = user.getSolde()-history.getMontant();
