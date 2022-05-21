@@ -59,11 +59,10 @@ public class GestionUsersImpl implements GestionUsers {
 			message = "La modification n'a pas pu être réalisé, il manque le numéro de compte du receveur, ou le compte receveur et donneur sont les memes";
 		} else if (history.getMontant() <= 0 || history.getMontant() > MontantMax || history.getMontant().isNaN()) {
 			message = "La modification n'a pas pu être réalisé, le montant est négatif,nul, ou il dépasse votre limite";
-		} else if (history.getCpteReceveur().trim() != userReceveur.getNumero().trim()) {
+		} else if (userReceveur.getNumero() == null || userReceveur.getNumero().isEmpty()) {
 			message = "La modification n'a pas pu être réalisé, le compte receveur n'existe pas";
 		} else {
 			Double newSolde = (userReceveur.getSolde() + history.getMontant());
-			System.out.println(newSolde);
 			ajoutReussi = this.userDao.ajouterMontant(history.getCpteReceveur(), newSolde);
 		}
 		bundle.put(Bundle.OPERATION_REUSSIE, ajoutReussi);
