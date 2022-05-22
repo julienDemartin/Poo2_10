@@ -103,24 +103,22 @@ public class Test_GestionnaireUseCases {
 	
 	@Test
 	@Order(9)
-	public void testListeHistoryConnecte() {
-		gestionnaire.lister(bundle);
-		assertTrue((Boolean)bundle.get(Bundle.OPERATION_REUSSIE));
-	}
-	
-	@Test
-	@Order(10)
 	public void testAjouterMontantConnecte() {
 		gestionnaire.ajouterMontant(bundle);
 		assertTrue((Boolean)bundle.get(Bundle.OPERATION_REUSSIE));
 	}
 	
 	@Test
-	@Order(11)
+	@Order(10)
 	public void testRetirerMontantConnecte() {
 		gestionnaire.retirerMontant(bundle);
-		History history = (History)bundle.get(Bundle.HISTORY);
-		System.out.println(history);
 		assertTrue((Boolean)bundle.get(Bundle.OPERATION_REUSSIE));
-	}	
+	}
+	
+	@Test
+	@Order(11)
+	public void testListeHistoryConnecte() {
+		gestionnaire.lister(bundle);
+		assertTrue((Boolean)bundle.get(Bundle.OPERATION_REUSSIE));
+	}
 }
