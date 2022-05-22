@@ -6,14 +6,10 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
-
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.List;
-
 import be.helha.controleurs.GestionnaireUseCases;
-
 import be.helha.domaine.Bundle;
+import be.helha.domaine.History;
 import be.helha.domaine.User;
 
 
@@ -38,17 +34,6 @@ public class Test_GestionnaireUseCases {
 	static void terminer() {
 		//viderLaTable();
 	}
-/*
-	@SuppressWarnings("unchecked")
-	private static void viderLaTable() {
-		GestionBieres gestionBieres = new GestionBieresImpl();
-		gestionBieres.lister(bundle);
-		List<Biere> bieresObtenues = (List<Biere>) bundle.get(Bundle.LISTE);
-		for (Biere b : bieresObtenues) {
-			bundle.put(Bundle.NOM, b.getNom());
-			gestionBieres.supprimerBiere(bundle);
-		}
-	}*/
 
 	@Test
 	@Order(1)
@@ -56,35 +41,34 @@ public class Test_GestionnaireUseCases {
 		gestionnaire.deconnecterUser(bundle);
 		assertFalse((Boolean) bundle.get(Bundle.OPERATION_REUSSIE));
 	}
-/*
+
 	@Test
 	@Order(2)
-	public void testAjouterBiere() {
-		gestionnaire.ajouterBiere(bundle);
+	public void testAjouterHistory() {
+		gestionnaire.ajouterHistory(bundle);
 		assertFalse((Boolean) bundle.get(Bundle.OPERATION_REUSSIE));
 	}
-
+	
 	@Test
 	@Order(3)
-	public void testModifierBiere() {
-		gestionnaire.modifierBiere(bundle);
-		assertFalse((Boolean) bundle.get(Bundle.OPERATION_REUSSIE));
-	}
-
-	@Test
-	@Order(4)
-	public void testSupprimerBiere() {
-		gestionnaire.supprimerBiere(bundle);
-		assertFalse((Boolean) bundle.get(Bundle.OPERATION_REUSSIE));
-	}
-
-	@Test
-	@Order(5)
-	public void testListerBieres() {
+	public void testListerHistory() {
 		gestionnaire.lister(bundle);
 		assertFalse((Boolean) bundle.get(Bundle.OPERATION_REUSSIE));
 	}
-*/
+	
+	@Test
+	@Order(4)
+	public void ajouterMontant() {
+		gestionnaire.ajouterMontant(bundle);
+		assertFalse((Boolean)bundle.get(Bundle.OPERATION_REUSSIE));
+	}
+	
+	@Test
+	@Order(5)
+	public void retirerMontant() {
+		gestionnaire.retirerMontant(bundle);
+		assertFalse((Boolean)bundle.get(Bundle.OPERATION_REUSSIE));
+	}
 	
 	@Test
 	@Order(6)
@@ -107,39 +91,36 @@ public class Test_GestionnaireUseCases {
 		gestionnaire.connecterUser(bundle);
 		assertFalse((Boolean) bundle.get(Bundle.OPERATION_REUSSIE));
 	}
-/*
+	
 	@Test
 	@Order(8)
-	public void testAjouterBiereUserConnecte() {
-		Biere biere = new Biere("Blanche De Bruxelles", "Blanche", "blanche", "Brasserie Lefèvre");
-		bundle.put(Bundle.BIERE, biere);
-		gestionnaire.ajouterBiere(bundle);
-		assertTrue((Boolean) bundle.get(Bundle.OPERATION_REUSSIE));
+	public void testAjouterHistoryConnecte() {
+		History history = new History("BE12 1567 1887 8888","BE12 1567 1887 9999",250.00);
+		bundle.put(Bundle.HISTORY, history);
+		gestionnaire.ajouterHistory(bundle);
+		assertTrue((Boolean)bundle.get(Bundle.OPERATION_REUSSIE));
 	}
-
+	
 	@Test
 	@Order(9)
-	public void testModifierBiereUserConnecte() {
-		Biere biere = new Biere("Blanche De Bruxelles", "Blanche!", "blanche", "Brasserie Lefèvre");
-		bundle.put(Bundle.BIERE, biere);
-		gestionnaire.modifierBiere(bundle);
-		assertTrue((Boolean) bundle.get(Bundle.OPERATION_REUSSIE));
+	public void testListeHistoryConnecte() {
+		gestionnaire.lister(bundle);
+		assertTrue((Boolean)bundle.get(Bundle.OPERATION_REUSSIE));
 	}
-
+	
 	@Test
 	@Order(10)
-	public void testListeBieresUserConnecte() {
-		gestionnaire.lister(bundle);
-		assertTrue((Boolean) bundle.get(Bundle.OPERATION_REUSSIE));
+	public void testAjouterMontantConnecte() {
+		gestionnaire.ajouterMontant(bundle);
+		assertTrue((Boolean)bundle.get(Bundle.OPERATION_REUSSIE));
 	}
-
+	
 	@Test
 	@Order(11)
-	public void testSupprimerBiereUserConnecte() {
-		String nom = "Blanche De Bruxelles";
-		bundle.put(Bundle.NOM, nom);
-		gestionnaire.supprimerBiere(bundle);
-		assertTrue((Boolean) bundle.get(Bundle.OPERATION_REUSSIE));
-	}*/
-
+	public void testRetirerMontantConnecte() {
+		gestionnaire.retirerMontant(bundle);
+		History history = (History)bundle.get(Bundle.HISTORY);
+		System.out.println(history);
+		assertTrue((Boolean)bundle.get(Bundle.OPERATION_REUSSIE));
+	}	
 }

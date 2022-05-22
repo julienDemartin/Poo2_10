@@ -23,7 +23,7 @@ public class Test_UserDao {
 	private static final String NOM_TATA = "tata";
 	private static final String PASSWORD_TATA = "1234";
 	
-	private static final String NUMERO_2525 = "2525";
+	private static final String NUMERO_2525 = "BE12 1567 1887 5555";
 		
 
 	private UserDao userDao = (UserDao) DaoFactory.getInstance().getDaoImpl(

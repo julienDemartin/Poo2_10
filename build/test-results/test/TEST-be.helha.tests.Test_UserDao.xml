@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="be.helha.tests.Test_UserDao" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-05-21T20:10:53" hostname="LAPTOP-TBUVHM0E" time="0.303">
+<testsuite name="be.helha.tests.Test_UserDao" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-05-22T07:35:29" hostname="LAPTOP-TBUVHM0E" time="0.25">
   <properties/>
-  <testcase name="test1()" classname="be.helha.tests.Test_UserDao" time="0.041"/>
-  <testcase name="test2()" classname="be.helha.tests.Test_UserDao" time="0.042"/>
-  <testcase name="test3()" classname="be.helha.tests.Test_UserDao" time="0.15"/>
-  <testcase name="test4()" classname="be.helha.tests.Test_UserDao" time="0.039"/>
-  <testcase name="test5()" classname="be.helha.tests.Test_UserDao" time="0.027"/>
+  <testcase name="test1()" classname="be.helha.tests.Test_UserDao" time="0.059"/>
+  <testcase name="test2()" classname="be.helha.tests.Test_UserDao" time="0.056"/>
+  <testcase name="test3()" classname="be.helha.tests.Test_UserDao" time="0.055"/>
+  <testcase name="test4()" classname="be.helha.tests.Test_UserDao" time="0.043"/>
+  <testcase name="test5()" classname="be.helha.tests.Test_UserDao" time="0.034"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[org.postgresql.util.PSQLException: ERREUR: invalid salt
 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
