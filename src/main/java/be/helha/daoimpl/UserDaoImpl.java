@@ -139,4 +139,33 @@ public class UserDaoImpl implements UserDao {
 		}
 		return user;
 	}
+
+
+	@Override
+	public User getMaj(String numero) {
+		User user = null;
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			con = DaoFactory.getInstance().getConnexion();
+			ps = con.prepareStatement(GETRECEVEUR);
+			ps.setString(1, numero.trim());
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				user = new User();
+				user.setEmail(rs.getString("email"));
+				user.setNom(rs.getString("nom"));
+				user.setPassword(rs.getString("mdp"));
+				user.setNumero(rs.getString("numero"));
+				user.setSolde(rs.getDouble("solde"));
+				user.setDecouvert(rs.getDouble("decouvert"));
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			cloturer(rs, ps, con);
+		}
+		return user;
+	}
 }

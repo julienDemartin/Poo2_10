@@ -46,7 +46,10 @@ public class GestionnaireUseCases implements GestionUsers, GestionHistory {
 			bundle.put(Bundle.OPERATION_REUSSIE, false);
 		}
 	}
-
+	public void miseAjour(Bundle bundle)
+	{
+		this.gestionUsers.miseAjour(bundle);
+	}
 	public void deconnecterUser(Bundle bundle)
 	{
 		if (user == null) 

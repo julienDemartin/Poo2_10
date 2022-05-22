@@ -42,9 +42,10 @@ public class ControleurPrincipal implements Initializable {
 		tfName.setText("");
 		if (singleton == null)
 			singleton = this; // on mémorise afin d'y accéder par la suite
+		tfNumero.setText("BE52 5157 3256 6652");
 	}
 
-
+	
 	public void trtBoutonConnecter() 
 	{
 		
@@ -54,10 +55,12 @@ public class ControleurPrincipal implements Initializable {
 		
 			if(btConnecter.getText()=="Déconnecter")
 			{
+				String message ="";
 				btConnecter.setText("Connecter");
 				
 				btLister.setDisable(true);
 				btVirement.setDisable(true);
+				
 				gestionnaire.deconnecterUser(bundle);
 				this.user= (User)bundle.get(Bundle.USER);
 				tfMessage.setText(this.user.getNom()+" a été déconnecté");
@@ -156,6 +159,8 @@ public class ControleurPrincipal implements Initializable {
 		this.gestionnaire.ajouterHistory(bundle);
 		this.gestionnaire.ajouterMontant(bundle);
 		this.gestionnaire.retirerMontant(bundle);
+		bundle.put(Bundle.MESSAGE, "le virement à bien été effectuer ");
+		actualiser();
 		majMessage();
 	}
 
@@ -163,7 +168,22 @@ public class ControleurPrincipal implements Initializable {
 		String message = (String) bundle.get(Bundle.MESSAGE);
 		this.tfMessage.setText(message);
 	}
-
+	
+	public void actualiser()
+	{
+		User maj = new User();
+		this.gestionnaire.miseAjour(bundle);
+		maj=(User) bundle.get(Bundle.USER);
+		String convertString;
+		double convertDouble;
+		convertDouble = maj.getSolde();
+		convertString =  this.convertDoubleToString(convertDouble);
+		tfSolde.setText(convertString);
+		
+		
+		
+		
+	}
 
 	public Bundle getBundle() {
 		return bundle;

@@ -44,7 +44,7 @@ public class GestionUsersImpl implements GestionUsers {
 		bundle.put(Bundle.OPERATION_REUSSIE, operationReussie);
 		bundle.put(Bundle.MESSAGE, message);
 	}
-
+	
 	@Override
 	public void ajouterMontant(Bundle bundle) {
 		boolean ajoutReussi = false;
@@ -90,5 +90,13 @@ public class GestionUsersImpl implements GestionUsers {
 		bundle.put(Bundle.OPERATION_REUSSIE, ajoutReussi);
 		bundle.put(Bundle.HISTORY, history);
 		bundle.put(Bundle.MESSAGE, message);
+	}
+
+	@Override
+	public void miseAjour(Bundle bundle) {
+		User user = (User)bundle.get(Bundle.USER);
+		user =this.userDao.getMaj(user.getNumero());
+		bundle.put(Bundle.USER, user);
+		
 	}	
 }

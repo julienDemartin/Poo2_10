@@ -29,6 +29,7 @@ public class ControleurListe implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		Bundle bundle = control.getBundle();
+		
 		gestionnaire.lister(bundle);
 		@SuppressWarnings("unchecked")
 		List<History> listeHistory = (List<History>) bundle.get(Bundle.LISTE);
