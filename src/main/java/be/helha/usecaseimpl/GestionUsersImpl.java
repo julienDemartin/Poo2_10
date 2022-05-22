@@ -84,12 +84,11 @@ public class GestionUsersImpl implements GestionUsers {
 		} else if (history.getMontant() <= 0 || history.getMontant() > MontantMax || history.getMontant().isNaN()) {
 			message = "La modification n'a pas pu être réalisé, le montant est négatif,nul, ou il dépasse votre limite";
 		} else {
-			Double newSolde = user.getSolde()-history.getMontant();
+			Double newSolde = user.getSolde()- history.getMontant();
 			ajoutReussi = this.userDao.retirerMontant(history.getCpteDonneur(), newSolde);
 		}
 		bundle.put(Bundle.OPERATION_REUSSIE, ajoutReussi);
 		bundle.put(Bundle.HISTORY, history);
 		bundle.put(Bundle.MESSAGE, message);
-		
 	}	
 }
