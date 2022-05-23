@@ -38,7 +38,6 @@ public class Test_HistoryDao {
 	}
 	
 	// Il faut que la table soit vide pour les tests Lister 1 et 2
-	/*
 	@Test
 	@Order(2)
 	public void testLister1() {
@@ -53,5 +52,4 @@ public class Test_HistoryDao {
 			assertEquals(1,historyObtenus.size());
 			assertNotEquals(2,historyObtenus.size());
 	}
-	*/
 }
