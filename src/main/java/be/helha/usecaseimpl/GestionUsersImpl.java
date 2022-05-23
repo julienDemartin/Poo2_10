@@ -64,8 +64,8 @@ public class GestionUsersImpl implements GestionUsers {
 		} else {
 			Double newSolde = (userReceveur.getSolde() + history.getMontant());
 			ajoutReussi = this.userDao.ajouterMontant(history.getCpteReceveur(), newSolde);
+			bundle.put(Bundle.OPERATION_REUSSIE, ajoutReussi);
 		}
-		bundle.put(Bundle.OPERATION_REUSSIE, ajoutReussi);
 		bundle.put(Bundle.HISTORY, history);
 		bundle.put(Bundle.MESSAGE, message);
 	}
@@ -86,8 +86,8 @@ public class GestionUsersImpl implements GestionUsers {
 		} else {
 			Double newSolde = user.getSolde()- history.getMontant();
 			ajoutReussi = this.userDao.retirerMontant(history.getCpteDonneur(), newSolde);
+			bundle.put(Bundle.OPERATION_REUSSIE, ajoutReussi);
 		}
-		bundle.put(Bundle.OPERATION_REUSSIE, ajoutReussi);
 		bundle.put(Bundle.HISTORY, history);
 		bundle.put(Bundle.MESSAGE, message);
 	}
