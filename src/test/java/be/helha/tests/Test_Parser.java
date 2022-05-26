@@ -24,10 +24,10 @@ public class Test_Parser {
 			persistance = ParserConfig
 					.lireConfiguration("src/test/resources/configPostgres1.xml");
 			assertEquals("DB", persistance.getType());
-			String toStringDao = persistance.getDaoImpl(CompteEnBanqueDao.class)
+			String toStringDao = persistance.getDaoImpl(UserDao.class)
 					.toString();
-			assertTrue(toStringDao.contains("be.helha.daoimpl.CompteEnBanqueDaoImpl"));
-			assertEquals("jdbc:postgresql://localhost:5432/database1",
+			assertTrue(toStringDao.contains("be.helha.daoimpl.UserDaoImpl"));
+			assertEquals("jdbc:postgresql://localhost:5432/postgres",
 					persistance.getUrl());
 			assertEquals("postgres", persistance.getUser());
 			assertEquals("1234", persistance.getPassword());
@@ -37,9 +37,6 @@ public class Test_Parser {
 		}
 	}
 	
-	
-	
-
 	@Test
 	public void testPostgres2() { // doit fonctionner avec les 2 daos
 		try {
@@ -49,9 +46,9 @@ public class Test_Parser {
 			String toStringDao = persistance.getDaoImpl(UserDao.class)
 					.toString();
 			assertTrue(toStringDao.contains("be.helha.daoimpl.UserDaoImpl"));
-			toStringDao = persistance.getDaoImpl(CompteEnBanqueDao.class).toString();
-			assertTrue(toStringDao.contains("be.helha.daoimpl.CompteEnBanqueDaoImpl"));
-			assertEquals("jdbc:postgresql://localhost:5432/database1",
+			toStringDao = persistance.getDaoImpl(HistoryDao.class).toString();
+			assertTrue(toStringDao.contains("be.helha.daoimpl.HistoryDaoImpl"));
+			assertEquals("jdbc:postgresql://localhost:5432/postgres",
 					persistance.getUrl());
 			assertEquals("postgres", persistance.getUser());
 			assertEquals("1234", persistance.getPassword());

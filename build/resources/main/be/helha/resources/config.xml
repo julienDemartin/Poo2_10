@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- config OK - 2 daos sont renseignés-->
-<persistance type="DB">
-	    <dao>be.helha.daoimpl.UserDaoImpl</dao>
-	    <dao>be.helha.daoimpl.CompteEnBanqueDaoImpl</dao>
-	    <url>jdbc:postgresql://localhost:5432/database1</url>
-	    <user>database1</user>
-	    <password>1234</password>
-</persistance>
