@@ -19,7 +19,7 @@ public class Test_HistoryDao {
 	private static HistoryDao historyDao = (HistoryDao) DaoFactory.getInstance().getDaoImpl(HistoryDao.class);
 
 	@BeforeAll
-	static void initialiserListeHistory() {
+	static void initialiserListeHistory() { 
 		histories = new ArrayList<History>(6);
 		histories.add(new History("BE12 1567 1887 5555", "BE12 1567 1887 4444", 50.25));
 		histories.add(new History("BE12 1567 1887 4444", "BE12 1567 1887 8888", 100.00));
